@@ -5,10 +5,10 @@
     
     <entry>
       <title></title>
-      <link href="/2021/09/23/%E6%96%B0%E5%BB%BA%E6%96%87%E6%9C%AC%E6%96%87%E6%A1%A3/"/>
-      <url>/2021/09/23/%E6%96%B0%E5%BB%BA%E6%96%87%E6%9C%AC%E6%96%87%E6%A1%A3/</url>
+      <link href="/2021/09/23/%E4%BA%BA%E7%94%9F%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2021/09/23/%E4%BA%BA%E7%94%9F%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
       
-        <content type="html"><![CDATA[<h1 id="fnlsdnfenfew"><a href="#fnlsdnfenfew" class="headerlink" title="fnlsdnfenfew"></a>fnlsdnfenfew</h1>]]></content>
+        <content type="html"><![CDATA[<p>title: 人生第一篇博客<br>date: 2021-09-23 22:51:38<br>tags:</p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><code>搭建博客有感</code></p><ul><li><p>​       作为一个电脑小白，人生第一次搭建属于自己的博客，真的是感触颇多。从开始到结束，我真的遇到了颇多的困难，让我印象最深的就是输入hexo d,总是会出现以下的错误，比如：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fatal: unable to <span class="keyword">auto</span>-<span class="function">detect email <span class="title">address</span> <span class="params">(got <span class="string">&#x27;z@DESKTOP-DPE3A08.(none)&#x27;</span>)</span></span></span><br><span class="line"><span class="function">error: src refspec HEAD does <span class="keyword">not</span> match any</span></span><br><span class="line"><span class="function">error: failed to push some refs to &#x27;https:<span class="comment">//github.com/seekwhale13/seekwhale13.ithub.io.git&#x27;</span></span></span><br></pre></td></tr></table></figure><p>​          经过查询了资料以后，我明白了这时候就可以先输入:</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">&quot;你的邮箱&quot;</span></span><br><span class="line">git config --global user.name <span class="string">&quot;你的github的用户名&quot;</span></span><br></pre></td></tr></table></figure><p>​          随后紧接着输入：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure><p>​        这样，大致上就可以了。如若还是不行，也不必太着急——心平气和，寻找问题！凡是问题都有解决的办法，就像有句话说得好：“世上无难事，只要肯攀登”。拥有一股不放弃的韧劲，任何问题都能够无处可逃。</p><p>​        哦，对了！还有一件很重要的事情！这简直对我来说就是血的教训：在建立仓库名时，千万不要漏掉了用户名和github.io/之间的一个点。我当时就是因为漏掉了这个点，多花了我整整一天才搭好博客。唉，粗心大意不可取呀。。。</p></li></ul>]]></content>
       
       
       
