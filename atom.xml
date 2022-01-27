@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-10-30T02:57:12.407Z</updated>
+  <updated>2022-01-27T12:10:33.265Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于Mysql的那些事</title>
+    <link href="http://example.com/2022/01/27/%E5%85%B3%E4%BA%8EMysql%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/"/>
+    <id>http://example.com/2022/01/27/%E5%85%B3%E4%BA%8EMysql%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/</id>
+    <published>2022-01-27T09:25:37.000Z</published>
+    <updated>2022-01-27T12:10:33.265Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="MySQL的登录方法以及一些基本用法"><a href="#MySQL的登录方法以及一些基本用法" class="headerlink" title="MySQL的登录方法以及一些基本用法"></a>MySQL的登录方法以及一些基本用法</h1><ul><li><p>首先按下Win键+R，然后输入cmd,打开cmd命令行窗口，在这其中输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure><p>随后输入自己设置的MySQL数据库的密码，输入结果如下图所示</p><p><img src="C:\Users\HP\Pictures\Saved Pictures\图片一.png" alt="图片一" style="zoom: 67%;" /></p><ul><li><p><strong>展示数据库</strong></p><p><img src="C:\Users\HP\Pictures\Saved Pictures\图片二.png" alt="图片二"></p></li><li><p><strong>切换数据库</strong></p><p><img src="C:\Users\HP\Pictures\Saved Pictures\图片三.png" alt="图片三"></p></li><li><p><strong>展示数据表</strong></p></li><li><p><img src="C:\Users\HP\Pictures\Saved Pictures\图片四.png" alt="图片四" style="zoom:80%;" /></p></li><li><p><strong>展示users表中的内容</strong></p></li></ul><p>​                <img src="C:\Users\HP\Pictures\Saved Pictures\图片五.png" alt="图片五" style="zoom:67%;" /></p><ul><li><p><strong>查库</strong> <u>(查找所有的库)</u></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select schema_name from information_schema.schemata;</span><br></pre></td></tr></table></figure><p><img src="C:\Users\HP\Pictures\Saved Pictures\查库.png" alt="查库"  /></p></li><li><p><strong>查表</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select table_name from information_schema.tables where table_schema=&#x27;security&#x27;;</span><br></pre></td></tr></table></figure><p><img src="C:\Users\HP\Pictures\Saved Pictures\查表.png" alt="查表"></p></li><li><p><strong>查列</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select column_name from information_schema.columns where table_name=&#x27;users&#x27;;</span><br></pre></td></tr></table></figure><p><img src="C:\Users\HP\Pictures\Saved Pictures\查列.png" alt="查列"></p></li><li><p><strong>查字段</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select username,password from security.users;</span><br></pre></td></tr></table></figure><p><img src="C:\Users\HP\Pictures\Saved Pictures\查字段.png" alt="查字段" style="zoom: 80%;" /></p><p><em><u>后面几种查找方式为MySQL高版本的查找方式</u></em></p></li><li><p><strong>查找登录用户</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select user();</span><br></pre></td></tr></table></figure><p><img src="C:\Users\HP\Pictures\Saved Pictures\用.png" alt="用"></p></li><li><p><strong>查找MySQL的版本</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select version();</span><br></pre></td></tr></table></figure><p><img src="C:\Users\HP\Pictures\Saved Pictures\版本.png" alt="版本"></p></li><li><p><strong>查找MySQL的安装路径</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select @@datadir;</span><br></pre></td></tr></table></figure><p><img src="C:\Users\HP\Pictures\Saved Pictures\路.png" alt="路" style="zoom:80%;" /></p></li><li><p><strong>查看服务器的操作系统</strong></p><p><img src="C:\Users\HP\Pictures\Saved Pictures\查看服务器的操作系统.png" alt="查看服务器的操作系统" style="zoom:80%;" /></p><p>😜😜😜                                                                                                                                   😜😜😜</p></li></ul></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;MySQL的登录方法以及一些基本用法&quot;&gt;&lt;a href=&quot;#MySQL的登录方法以及一些基本用法&quot; class=&quot;headerlink&quot; title=&quot;MySQL的登录方法以及一些基本用法&quot;&gt;&lt;/a&gt;MySQL的登录方法以及一些基本用法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>JavaScript常用脚本</title>
