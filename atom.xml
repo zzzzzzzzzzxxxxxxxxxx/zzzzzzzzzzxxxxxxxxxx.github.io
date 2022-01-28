@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-01-27T12:59:43.011Z</updated>
+  <updated>2022-01-28T09:06:28.221Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一些函数</title>
+    <link href="http://example.com/2022/01/28/%E4%B8%80%E4%BA%9B%E5%87%BD%E6%95%B0/"/>
+    <id>http://example.com/2022/01/28/%E4%B8%80%E4%BA%9B%E5%87%BD%E6%95%B0/</id>
+    <published>2022-01-28T06:36:25.000Z</published>
+    <updated>2022-01-28T09:06:28.221Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><h1 id="left-函数"><a href="#left-函数" class="headerlink" title="left()函数"></a><strong>left()函数</strong></h1></li></ul><p>left(a,b)表示从左侧截取a的前b位，正确则返回1，错误则返回0。</p><p>eg:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">select left(database(),1)=&#x27;s&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>上面的意思是说截取当前所用的数据库字符串的前1位，也就是第一位，而当前所用数据库字符串为security,其第一位确为<strong>‘s’</strong>,因此最后结果就会返回1。</p><p><img src="https://s2.loli.net/2022/01/28/Ugq5pljzAxdsNVP.png" alt="left.png" style="zoom: 80%;" /></p><p>若是改为如下,则会返回0。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">select left(database(),2)=&#x27;so&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>因为截取数据库字符串的前两位本该为<strong>‘se’</strong>,而非<strong>‘so’</strong>，故结果为错误会返回0。</p><p><img src="https://s2.loli.net/2022/01/28/hk8Ai97mH4bunNl.png" alt="left2.png" style="zoom:80%;" /></p><ul><li><h1 id="regexp函数"><a href="#regexp函数" class="headerlink" title="regexp函数"></a><strong>regexp函数</strong></h1></li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">select user() regexp&#x27;r&#x27;;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><strong>user()</strong>的结果是root,regexp为匹配root的正则表达式；该函数的作用主要是：与user()的结果从左往右匹配，匹配成功则返回1，匹配失败则返回0。</p><p><img src="https://s2.loli.net/2022/01/28/7cAPuLwvoSgONEH.png" alt="regexp.png" style="zoom:80%;" /></p><p>如若改为,则返回0。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">select database() regexp&#x27;sc&#x27;;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>因为database()的结果是<strong>security</strong>,从左往右匹配，无法与<strong>‘sc’</strong>匹配成功，故返回0。</p><p><img src="https://s2.loli.net/2022/01/28/aZGc9j8fhTIowlM.png" alt="regexp2.png" style="zoom:80%;" /></p><ul><li><h1 id="like函数"><a href="#like函数" class="headerlink" title="like函数"></a><strong>like函数</strong></h1></li></ul><p>该函数与<strong>regexp函数</strong>相似，只是要记得在<strong>‘’</strong>中加上<strong>%</strong>。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">select user() like&#x27;ro%&#x27;;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>同理，上式返回结果也为1。</p><p><img src="https://s2.loli.net/2022/01/28/bdTBjr63GI89VUn.png" alt="like.png" style="zoom:80%;" /></p><ul><li><h1 id="substr-函数"><a href="#substr-函数" class="headerlink" title="substr()函数"></a><strong>substr()函数</strong></h1></li></ul><p><strong>substr(a,b,c)</strong>意为从位置b开始，截取a字符串c位长度。</p><p>eg:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">select substr((select database()),1,2)=&#x27;se&#x27;;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><strong>select database()</strong>的结果是字符串<strong>security</strong>,上式左边意为从该字符串的第一位开始截取两位长度的字符串，即为<strong>‘se’</strong>,故该式结果正确返回1。</p><p><img src="https://s2.loli.net/2022/01/28/527EGxS89hJHvMn.png" alt="substr.png" style="zoom:80%;" /></p><ul><li><h1 id="ascii-函数"><a href="#ascii-函数" class="headerlink" title="ascii()函数"></a><strong>ascii()函数</strong></h1></li></ul><p>将字符转化为其对应的ascii的值。</p><p>eg:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select ascii(&#x27;a&#x27;);</span><br></pre></td></tr></table></figure><p><img src="https://s2.loli.net/2022/01/28/MZorACkGmEFu71z.png" alt="ascii.png" style="zoom:80%;" /></p><ul><li><h1 id="chr-数字-或者是ord-‘字母’"><a href="#chr-数字-或者是ord-‘字母’" class="headerlink" title="chr(数字)或者是ord(‘字母’)"></a><strong>chr(数字)或者是ord(‘字母’)</strong></h1></li></ul><p>这是python中的两个函数，可以判断当前数字和字母的ascii的值是多少。</p><p><img src="https://s2.loli.net/2022/01/28/XoTDARfhwHrneSg.jpg" alt="图司机-20220128-28351835_看图王.jpg" style="zoom: 67%;" /></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;h1 id=&quot;left-函数&quot;&gt;&lt;a href=&quot;#left-函数&quot; class=&quot;headerlink&quot; title=&quot;left()函数&quot;&gt;&lt;/a&gt;&lt;strong&gt;left()函数&lt;/strong&gt;&lt;/h1&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;left(a,b)表</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>关于Mysql的那些事</title>
